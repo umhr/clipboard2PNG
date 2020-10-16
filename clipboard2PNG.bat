@@ -1,6 +1,5 @@
 @powershell -windowstyle hidden -NoProfile -ExecutionPolicy Unrestricted "&([ScriptBlock]::Create((cat -encoding utf8 \"%~f0\" | ? {$_.ReadCount -gt 2}) -join \"`n\"))" %*
 @exit /b
-# ↑ PowerShellスクリプトをbatにラッピングするためのおまじない
 
 Add-Type -AssemblyName System.Windows.Forms;
 [System.Drawing.Image]$clipboardImage = [Windows.Forms.Clipboard]::GetImage();
