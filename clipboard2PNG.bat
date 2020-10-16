@@ -6,6 +6,9 @@ Add-Type -AssemblyName System.Windows.Forms;
 
 if ($clipboardImage -eq $null)
 {
+  # クリップボード上に画像が無い場合は SnippingTool を起動
+  # Start-Process -FilePath "C:\WINDOWS\system32\SnippingTool.exe";
+
   # クリップボード上に画像が無い場合はフルスクリーンをキャプチャ
   [Windows.Forms.Sendkeys]::SendWait("{PrtSc}");
   Start-Sleep -Milliseconds 250
